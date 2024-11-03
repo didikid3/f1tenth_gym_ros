@@ -45,12 +45,6 @@ def generate_launch_description():
         parameters=[config]
     )
 
-    gap_follow_node = Node(
-        package="gap_follow",
-        executable="reactive_node",
-        name="gap_follow"
-    )
-
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -91,8 +85,6 @@ def generate_launch_description():
     )
 
     # finalize
-    ld.add(gap_follow_node)
-
     ld.add_action(rviz_node)
     ld.add_action(bridge_node)
     ld.add_action(nav_lifecycle_node)
